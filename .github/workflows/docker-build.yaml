@@ -67,8 +67,9 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         uses: docker/scout-action@v1
         with:
-          command: compare
+          command: environment, compare
           image: ${{ steps.meta.outputs.tags }}
+          environment: prod
           to-env: production
           ignore-unchanged: true
           only-severities: critical,high
