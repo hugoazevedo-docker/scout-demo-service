@@ -72,5 +72,6 @@ jobs:
           to-env: production
           ignore-unchanged: true
           only-severities: critical,high
+          organization: demonstrationorg
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
