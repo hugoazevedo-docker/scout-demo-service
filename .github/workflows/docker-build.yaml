@@ -60,7 +60,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
     # Compare the image built in the pull request with the one in production
-      - name: Docker Scout
+      - name: Docker Scout Compare
         id: docker-scout
         if: ${{ github.event_name == 'pull_request' }}
         uses: docker/scout-action@v1
