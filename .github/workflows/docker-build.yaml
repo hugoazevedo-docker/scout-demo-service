@@ -69,7 +69,7 @@ jobs:
         with:
           command: environment, compare
           image: ${{ steps.meta.outputs.tags }}
-          environment: prod
+          environment: production
           to-env: production
           ignore-unchanged: true
           only-severities: critical,high
