@@ -68,7 +68,8 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           platforms: "linux/arm64"
           sbom: false
-          provenance: false          
+          provenance: false
+          environment: prod
       
       - name: Docker Scout
         id: docker-scout-environment
