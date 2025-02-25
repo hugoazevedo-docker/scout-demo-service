@@ -104,7 +104,7 @@ jobs:
           command: compare
           image: ${{ steps.meta.outputs.tags }}
           only-severities: critical,high
-          to-env: production
+          to-env: prod
           ignore-unchanged: true
           platform: "linux/arm64"
           #exit-code: true       
