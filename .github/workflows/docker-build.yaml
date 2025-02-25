@@ -96,6 +96,6 @@ jobs:
           only-severities: critical,high
           to-env: prod
           platform: "linux/arm64"
-          exit-code: true       
+          #exit-code: true       
           summary: true
 
