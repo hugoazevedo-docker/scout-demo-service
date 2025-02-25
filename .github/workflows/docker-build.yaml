@@ -60,7 +60,7 @@ jobs:
         uses: docker/scout-action@v1
         with:
           command: environment
-          image: ${{ steps.meta.outputs.tags }}
+          image: demonstrationorg/ghactions-scout-demo:main
           environment: prod
           organization: demonstrationorg
       
