@@ -55,6 +55,15 @@ jobs:
           sbom: true
           provenance: true
       
+      - name: Docker Scout
+        id: docker-scout-environment
+        uses: docker/scout-action@v1
+        with:
+          command: environment
+          image: ${{ steps.meta.outputs.tags }}
+          environment: prod
+          organization: demonstrationorg
+      
       - name: Build and push Docker image on PR
         id: build-and-push-pr
         if: ${{ github.event_name == 'pull_request_target' }}
@@ -68,16 +77,7 @@ jobs:
           platforms: "linux/arm64"
           sbom: false
           provenance: false          
-      
-      - name: Docker Scout
-        id: docker-scout-environment
-        uses: docker/scout-action@v1
-        with:
-          command: environment
-          image: ${{ steps.meta.outputs.tags }}
-          environment: prod
-          organization: demonstrationorg
-      
+           
       - name: Analyze for critical and high CVEs
         id: docker-scout-cves
         if: ${{ github.event_name != 'pull_request_target' }}
