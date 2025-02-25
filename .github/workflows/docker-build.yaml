@@ -8,7 +8,7 @@ on:
     branches: ["main"]
 
 env:
-  IMAGE_NAME: "hugoazevedo560/scout"
+  IMAGE_NAME: "demonstrationorg/ghactions-scout-demo"
   SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
   DOCKERFILE_PATH: Dockerfile
 
